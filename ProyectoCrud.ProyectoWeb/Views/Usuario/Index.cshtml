@@ -1,0 +1,146 @@
+﻿@{
+    ViewData["Title"] = "Usuario";
+}
+<div class="row">
+    <div class="col-sm-12">
+
+        <!--Inicio tarjeta-->
+        <div class="card">
+            <div class="card-header"> Crear Usuario</div>
+            <div class="card-body">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th> <button class="btn btn-success" id="btnNuevo">Nuevo Usuario</button></th>
+                            <th> <a class="nav-link text-dark" asp-area="" asp-controller="Usuario" asp-action="UsuarioConsulta">Consultar Usuarios</a></th>
+                            
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <!--Fin tarjeta-->
+
+    </div>
+</div>
+
+
+
+<!--Inicio Modal-->
+<div class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Detalle Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="txtId" value="0" />
+                <div class="mb-2">
+                    <label>Nombre</label>
+                    <input type="text" class="form-control" id="txtNombre" />
+                </div>
+                <div class="mb-2">
+                    <div class="form-group">
+                        <label>Fecha Nacimiento</label>
+                        <div class="input-group date" data-onload-datetimepicker='{"locale": "es", "format": "DD/MM/yyyy"}'>
+                            <input type="text" class="form-control" id="txtFechaNacimiento" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-2">
+                    <div class="form-group">
+                    <label>Sexo</label>
+                        <select class="form-select" id="txtSexo">
+                            <option selected>Seleccionar...</option>
+                            <option value="F">F</option>
+                            <option value="M">M</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" id="btnGuardar">Guardar</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Fin Modal-->
+@section Scripts{
+
+    <script>
+
+        
+
+
+        const Modelo_base = {
+            id: 0,
+            nombre: "",
+            fechaNacimiento: "",
+            sexo: ""
+
+        }
+
+        function mostrarModal(modelo) {
+
+            $("#txtId").val(modelo.id);
+            $("#txtNombre").val(modelo.nombre)
+            $("#txtFechaNacimiento").val(modelo.fechaNacimiento)
+            $("#txtSexo").val(modelo.sexo)
+            $('.modal').modal('show');
+        }
+
+        $("#btnNuevo").click(() => {
+
+            mostrarModal(Modelo_base);
+        })
+
+        /* BUCLE GUARDAR USUARIO */
+
+        $("#btnGuardar").click(() => {
+
+            let NuevoModelo = Modelo_base;
+
+            NuevoModelo["id"] = $("#txtId").val();
+            NuevoModelo["nombre"]  = $("#txtNombre").val();
+            NuevoModelo["fechaNacimiento"]  = $("#txtFechaNacimiento").val();
+            NuevoModelo["sexo"] = $("#txtSexo").val();
+
+            if($("#txtId").val() == "0"){
+                fetch("Usuario/Insertar",{
+                    method:"POST",
+                    headers: {
+                        'Content-Type': 'application/json;charset=utf-8'
+                    },
+                    body: JSON.stringify( NuevoModelo)
+                })
+                .then((response) => {
+                    return response.ok ? response.json() : Promise.reject(response)
+                })
+                .then((dataJson) => {
+                
+                    if(dataJson.valor){
+                        alert("Usuario Registrado");
+                          $('.modal').modal('hide');
+
+                    }
+                })
+
+            }
+        })
+
+        
+
+
+
+    </script>
+
+}

@@ -1,0 +1,17 @@
+C:\Users\A.F.A\source\repos\SolutionCrud\ProyectoCrud.ServicioWCF\bin\Debug\net6.0\ProyectoCrud.ServicioWCF.deps.json
+C:\Users\A.F.A\source\repos\SolutionCrud\ProyectoCrud.ServicioWCF\bin\Debug\net6.0\ProyectoCrud.ServicioWCF.dll
+C:\Users\A.F.A\source\repos\SolutionCrud\ProyectoCrud.ServicioWCF\bin\Debug\net6.0\ProyectoCrud.ServicioWCF.pdb
+C:\Users\A.F.A\source\repos\SolutionCrud\ProyectoCrud.ServicioWCF\obj\Debug\net6.0\ProyectoCrud.ServicioWCF.csproj.AssemblyReference.cache
+C:\Users\A.F.A\source\repos\SolutionCrud\ProyectoCrud.ServicioWCF\obj\Debug\net6.0\ProyectoCrud.ServicioWCF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\A.F.A\source\repos\SolutionCrud\ProyectoCrud.ServicioWCF\obj\Debug\net6.0\ProyectoCrud.ServicioWCF.AssemblyInfoInputs.cache
+C:\Users\A.F.A\source\repos\SolutionCrud\ProyectoCrud.ServicioWCF\obj\Debug\net6.0\ProyectoCrud.ServicioWCF.AssemblyInfo.cs
+C:\Users\A.F.A\source\repos\SolutionCrud\ProyectoCrud.ServicioWCF\obj\Debug\net6.0\ProyectoCrud.ServicioWCF.csproj.CoreCompileInputs.cache
+C:\Users\A.F.A\source\repos\SolutionCrud\ProyectoCrud.ServicioWCF\obj\Debug\net6.0\ProyectoCrud.ServicioWCF.dll
+C:\Users\A.F.A\source\repos\SolutionCrud\ProyectoCrud.ServicioWCF\obj\Debug\net6.0\refint\ProyectoCrud.ServicioWCF.dll
+C:\Users\A.F.A\source\repos\SolutionCrud\ProyectoCrud.ServicioWCF\obj\Debug\net6.0\ProyectoCrud.ServicioWCF.pdb
+C:\Users\A.F.A\source\repos\SolutionCrud\ProyectoCrud.ServicioWCF\obj\Debug\net6.0\ref\ProyectoCrud.ServicioWCF.dll
+C:\Users\A.F.A\source\repos\SolutionCrud\ProyectoCrud.ServicioWCF\bin\Debug\net6.0\ProyectoCrud.DAL.dll
+C:\Users\A.F.A\source\repos\SolutionCrud\ProyectoCrud.ServicioWCF\bin\Debug\net6.0\ProyectoCrud.Models.dll
+C:\Users\A.F.A\source\repos\SolutionCrud\ProyectoCrud.ServicioWCF\bin\Debug\net6.0\ProyectoCrud.DAL.pdb
+C:\Users\A.F.A\source\repos\SolutionCrud\ProyectoCrud.ServicioWCF\bin\Debug\net6.0\ProyectoCrud.Models.pdb
+C:\Users\A.F.A\source\repos\SolutionCrud\ProyectoCrud.ServicioWCF\obj\Debug\net6.0\ProyectoCrud.ServicioWCF.csproj.CopyComplete
