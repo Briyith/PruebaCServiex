@@ -1,4 +1,5 @@
-﻿using ProyectoCrud.DAL.DataContext;
+﻿using Microsoft.EntityFrameworkCore;
+using ProyectoCrud.DAL.DataContext;
 using ProyectoCrud.Models;
 using System;
 using System.Collections.Generic;
@@ -20,16 +21,13 @@ namespace ProyectoCrud.DAL.Repositorio
 
         public async Task<bool> Actualizar(Usuario modelo)
         {
-            _dbcontext.Usuarios.Update(modelo);
-            await _dbcontext.SaveChangesAsync();
+            _dbcontext.Database.ExecuteSqlRaw("sp_actualizar_usuario {0}, {1}, {2}, {3}", modelo.Id, modelo.Nombre, modelo.FechaNacimiento, modelo.Sexo);
             return true;
         }
 
         public async Task<bool> Eliminar(int id)
         {
-            Usuario modelo = _dbcontext.Usuarios.First(c => c.Id == id);
-            _dbcontext.Usuarios.Remove(modelo);
-            await _dbcontext.SaveChangesAsync();
+            _dbcontext.Database.ExecuteSqlRaw("sp_eliminar_usuario {0}", id);
             return true;
 
 
@@ -37,8 +35,7 @@ namespace ProyectoCrud.DAL.Repositorio
 
         public async Task<bool> Insertar(Usuario modelo)
         {
-            _dbcontext.Usuarios.Add(modelo);
-            await _dbcontext.SaveChangesAsync();
+            _dbcontext.Database.ExecuteSqlRaw("sp_insertar_usuario {0}, {1}, {2}", modelo.Nombre, modelo.FechaNacimiento, modelo.Sexo);
             return true;
         }
 
